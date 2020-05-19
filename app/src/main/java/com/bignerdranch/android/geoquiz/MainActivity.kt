@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         trueButton = findViewById(R.id.true_button)
         falseButton = findViewById(R.id.false_button)
         nextButton = findViewById(R.id.next_button)
-        previousButton = findViewById(R.id.previous_button)
         questionTextView = findViewById((R.id.question_text_view))
 
         trueButton.setOnClickListener { view: View ->
@@ -48,10 +47,6 @@ class MainActivity : AppCompatActivity() {
             setQuestionForward()
         }
 
-        previousButton.setOnClickListener {
-            setQuestionBackward()
-        }
-
         questionTextView.setOnClickListener {
             setQuestionForward()
         }
@@ -61,11 +56,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun setQuestionForward(){
         currentIndex = currentIndex++ % questionbank.size
-        updateQuestion()
-    }
-
-    private fun setQuestionBackward(){
-        currentIndex = currentIndex-- % questionbank.size
         updateQuestion()
     }
 
